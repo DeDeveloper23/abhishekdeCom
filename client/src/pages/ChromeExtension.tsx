@@ -22,19 +22,15 @@ export default function ChromeExtension() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="aspect-video relative mb-12 rounded-lg overflow-hidden bg-black/5"
+          className="aspect-video relative mb-12 rounded-2xl overflow-hidden bg-background border shadow-lg"
         >
-          <video 
+          <img 
+            src="/Screenshot 2025-02-21 at 12.27.22 PM.png"
+            alt="Squash NoteTaker Interface"
             className="w-full h-full object-contain"
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src="/Screen Recording 2025-02-21 at 12.00.07 PM.mov" type="video/quicktime" />
-            Your browser does not support the video tag.
-          </video>
+            loading="lazy"
+            decoding="async"
+          />
         </motion.div>
 
         <motion.div
