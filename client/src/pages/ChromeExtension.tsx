@@ -25,7 +25,7 @@ export default function ChromeExtension() {
           className="aspect-video relative mb-12 rounded-2xl overflow-hidden bg-background border shadow-lg"
         >
           <img 
-            src="/attached_assets/Screenshot 2025-02-21 at 12.27.22 PM.png"
+            src="../../../attached_assets/Screenshot 2025-02-21 at 12.27.22 PM.png"
             alt="Squash NoteTaker Interface"
             className="w-full h-full object-contain"
             loading="lazy"
