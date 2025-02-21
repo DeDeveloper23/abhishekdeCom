@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export default function ChromeExtension() {
   return (
@@ -10,9 +12,9 @@ export default function ChromeExtension() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold mb-4">Local AI Note Taker</h1>
+          <h1 className="text-4xl font-bold mb-4">Squash NoteTaker</h1>
           <p className="text-xl text-muted-foreground">
-            Privacy-First Chrome Extension
+            Apple-Inspired Note Taking with AI-Powered Document Analysis
           </p>
         </motion.div>
 
@@ -24,29 +26,33 @@ export default function ChromeExtension() {
         >
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Local Processing</h3>
-              <p>
-                All data processing happens locally on your device, ensuring
-                complete privacy and security.
+              <h3 className="text-xl font-semibold mb-4">Beautiful Design</h3>
+              <p className="text-muted-foreground">
+                Elegant Apple-inspired interface with smooth animations and
+                seamless transitions. A delightful note-taking experience right
+                in your browser.
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4">AI-Powered</h3>
-              <p>
-                Built-in AI capabilities for smart note organization and content
-                analysis.
+              <h3 className="text-xl font-semibold mb-4">AI-Powered Analysis</h3>
+              <p className="text-muted-foreground">
+                Google Gemini integration for intelligent document analysis.
+                Understand PDFs, Word documents, text files, and even code files
+                with AI assistance.
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-4">Document Analysis</h3>
-              <p>
-                Intelligent document parsing and summarization features.
+              <h3 className="text-xl font-semibold mb-4">File Support</h3>
+              <p className="text-muted-foreground">
+                Direct file uploads and analysis for multiple formats including
+                PDFs, .docx, .txt, and .py files. Get instant insights and
+                summaries.
               </p>
             </CardContent>
           </Card>
@@ -59,20 +65,31 @@ export default function ChromeExtension() {
           className="prose prose-lg mx-auto"
         >
           <p>
-            This Chrome extension is a powerful note-taking tool that runs
-            completely locally. It features built-in AI capabilities for smart
-            organization and analysis while maintaining user privacy by
-            processing all data on-device.
+            Squash NoteTaker is a beautiful and intelligent note-taking Chrome
+            extension that combines the elegance of Apple's design philosophy
+            with the power of AI. Features include:
           </p>
-          
-          <h2>Key Features</h2>
+
           <ul>
-            <li>100% local processing</li>
-            <li>AI-powered note organization</li>
-            <li>Document analysis capabilities</li>
-            <li>Secure data storage</li>
-            <li>Cross-device sync support</li>
+            <li>Sleek, minimalist interface with fluid animations</li>
+            <li>Google Gemini AI-powered document analysis</li>
+            <li>Support for multiple file formats (PDF, DOCX, TXT, PY)</li>
+            <li>Instant summaries and insights</li>
+            <li>Seamless file upload and organization</li>
           </ul>
+
+          <div className="mt-8">
+            <Button asChild>
+              <a 
+                href="https://github.com/DeDeveloper23/chrome-notetaker" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
+              >
+                View Project <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </div>
