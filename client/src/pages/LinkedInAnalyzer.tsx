@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export default function LinkedInAnalyzer() {
   return (
@@ -12,7 +14,7 @@ export default function LinkedInAnalyzer() {
         >
           <h1 className="text-4xl font-bold mb-4">LinkedIn AI Post Analyzer</h1>
           <p className="text-xl text-muted-foreground">
-            Smart Content Analysis Tool
+            Instant Content Analysis & Verification with Perplexity AI
           </p>
         </motion.div>
 
@@ -26,10 +28,10 @@ export default function LinkedInAnalyzer() {
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-4">Key Features</h3>
               <ul className="space-y-2">
-                <li>AI-powered content analysis</li>
-                <li>Engagement predictions</li>
-                <li>Writing suggestions</li>
-                <li>Performance tracking</li>
+                <li>One-click post analysis using Perplexity AI</li>
+                <li>Source verification for claims and statements</li>
+                <li>In-depth topic exploration</li>
+                <li>Browser extension integration</li>
               </ul>
             </CardContent>
           </Card>
@@ -38,10 +40,10 @@ export default function LinkedInAnalyzer() {
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold mb-4">Technology Stack</h3>
               <ul className="space-y-2">
-                <li>Natural Language Processing</li>
-                <li>Machine Learning Models</li>
-                <li>LinkedIn API Integration</li>
-                <li>Real-time Analytics</li>
+                <li>Perplexity AI API Integration</li>
+                <li>Chrome Extension Architecture</li>
+                <li>Real-time Analysis Engine</li>
+                <li>Source Verification System</li>
               </ul>
             </CardContent>
           </Card>
@@ -54,11 +56,30 @@ export default function LinkedInAnalyzer() {
           className="prose prose-lg mx-auto"
         >
           <p>
-            The LinkedIn AI Post Analyzer helps content creators optimize their
-            LinkedIn posts for maximum engagement. Using advanced AI algorithms,
-            it analyzes content quality, predicts performance, and provides
-            actionable recommendations.
+            The LinkedIn AI Post Analyzer is a powerful Chrome extension that brings
+            the analytical capabilities of Perplexity AI directly to your LinkedIn
+            feed. With a simple click, users can:
           </p>
+
+          <ul>
+            <li>Verify claims and statements with credible sources</li>
+            <li>Deep dive into topics mentioned in posts</li>
+            <li>Get AI-powered insights and analysis</li>
+            <li>Access related resources and learning materials</li>
+          </ul>
+
+          <div className="mt-8">
+            <Button asChild>
+              <a 
+                href="https://github.com/DeDeveloper23/LinkedInAiInsight" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center"
+              >
+                View Project <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </div>
