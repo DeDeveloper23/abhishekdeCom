@@ -22,6 +22,21 @@ export default function ChromeExtension() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
+          className="aspect-video relative mb-12 rounded-lg overflow-hidden bg-black/5"
+        >
+          <img
+            src="/Screen Recording 2025-02-21 at 12.00.07 PM.gif"
+            alt="Squash NoteTaker Demo"
+            className="object-contain w-full h-full"
+            loading="lazy"
+            decoding="async"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
         >
           <Card>
@@ -61,7 +76,7 @@ export default function ChromeExtension() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
           className="prose prose-lg mx-auto"
         >
           <p>
