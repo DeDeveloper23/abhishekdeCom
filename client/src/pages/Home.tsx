@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AiExperience from "@/components/AiExperience";
 import ProjectCard from "@/components/ProjectCard";
 import ContactSection from "@/components/ContactSection";
 
@@ -27,7 +28,8 @@ export default function Home() {
   return (
     <div className="pt-16">
       <Hero />
-      
+      <AiExperience />
+
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
