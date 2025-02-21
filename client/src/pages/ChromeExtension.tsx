@@ -24,13 +24,17 @@ export default function ChromeExtension() {
           transition={{ delay: 0.2 }}
           className="aspect-video relative mb-12 rounded-lg overflow-hidden bg-black/5"
         >
-          <img
-            src="/Screen Recording 2025-02-21 at 12.00.07 PM.gif"
-            alt="Squash NoteTaker Demo"
-            className="object-contain w-full h-full"
-            loading="lazy"
-            decoding="async"
-          />
+          <video 
+            className="w-full h-full object-contain"
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/Screen Recording 2025-02-21 at 12.00.07 PM.mov" type="video/quicktime" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
 
         <motion.div
