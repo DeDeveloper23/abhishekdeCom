@@ -1,11 +1,13 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import path from "path";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Log middleware for API requests
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -36,6 +38,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Simple health check endpoint
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Setup the server immediately but don't start listening unless not in Vercel
 (async () => {
   const server = await registerRoutes(app);
 
@@ -56,13 +64,19 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client
-  const port = process.env.PORT || 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  // Only start listening if not in Vercel environment
+  if (!process.env.VERCEL) {
+    const port = process.env.PORT || 5000;
+    server.listen({
+      port,
+      host: "0.0.0.0",
+    }, () => {
+      log(`serving on port ${port}`);
+    });
+  } else {
+    log('Running in Vercel environment - configured as serverless function');
+  }
 })();
+
+// Export the Express app for Vercel
+export default app;
