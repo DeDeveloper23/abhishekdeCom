@@ -332,6 +332,14 @@ export default function LinkedInAnalyzer() {
                       processes all content locally in your browser and requires your own 
                       Perplexity API key. We never store or collect your LinkedIn data or API key.
                     </p>
+                    
+                    <div className="mt-6">
+                      <Button variant="outline" asChild>
+                        <a href="/projects/linkedin-ai-insight/privacy" className="inline-flex items-center">
+                          View Full Privacy Policy <ExternalLink className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
