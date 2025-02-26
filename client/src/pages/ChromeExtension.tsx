@@ -3,34 +3,55 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
-export default function ChromeExtension() {
+export default function SquashNoteTaker() {
   return (
     <div className="pt-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Logo and Title Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="flex flex-col items-center justify-center mb-16"
         >
-          <h1 className="text-4xl font-bold mb-4">Squash NoteTaker</h1>
-          <p className="text-xl text-muted-foreground">
+          <div className="flex items-center justify-center gap-6 mb-8">
+            <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center">
+              <img 
+                src="https://res.cloudinary.com/dj1cbu9zy/image/upload/v1740604689/gourd_olk8lm.png" 
+                alt="Squash NoteTaker Logo"
+                className="w-full h-full object-contain"
+                style={{ 
+                  filter: "brightness(0) saturate(100%) invert(65%) sepia(49%) saturate(410%) hue-rotate(336deg) brightness(93%) contrast(92%)"
+                }}
+              />
+            </div>
+            <div className="text-left">
+              <h1 className="text-3xl font-bold text-[#E2A378]">Squash</h1>
+              <h1 className="text-3xl font-bold text-[#E2A378]">NoteTaker</h1>
+            </div>
+          </div>
+          
+          <p className="text-xl text-muted-foreground max-w-2xl">
             Apple-Inspired Note Taking with AI-Powered Document Analysis
           </p>
         </motion.div>
 
+        {/* YouTube Video Demo Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="aspect-video relative mb-12 rounded-2xl overflow-hidden bg-background border shadow-lg"
+          transition={{ delay: 0.1 }}
+          className="mb-12"
         >
-          <img 
-            src="../../../attached_assets/Screenshot 2025-02-21 at 12.27.22 PM.png"
-            alt="Squash NoteTaker Interface"
-            className="w-full h-full object-contain"
-            loading="lazy"
-            decoding="async"
-          />
+          <h2 className="text-2xl font-semibold mb-4 text-center">Watch Squash NoteTaker in Action</h2>
+          <div className="aspect-video relative rounded-2xl overflow-hidden bg-background border shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/3n1tIJUST4Y"
+              title="Squash NoteTaker Demo"
+              className="absolute top-0 left-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </motion.div>
 
         <motion.div

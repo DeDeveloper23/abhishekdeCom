@@ -7,7 +7,7 @@ export default function Home() {
   const featuredProjects = [
     {
       title: "Ascend Hiring",
-      description: "AI-Powered Recruitment & Applicant Tracking System",
+      description: "AI-Powered Recruitment Agents & Applicant Tracking System Integrations",
       image: "https://cdn.prod.website-files.com/66219824440af70bb5dfb15c/665f547ec7d593ffce9f0c31_candidates-screen.png",
       link: "/projects/ascend-hiring"
     },
@@ -18,9 +18,20 @@ export default function Home() {
       link: "/projects/cagr-club"
     },
     {
+      title: "Squash NoteTaker",
+      description: "Apple-inspired AI-powered note taking tool with document uploading support",
+      image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1740604689/gourd_olk8lm.png",
+      imageStyle: { 
+        maxHeight: "70%", 
+        margin: "0 auto",
+        filter: "brightness(0) saturate(100%) invert(65%) sepia(49%) saturate(410%) hue-rotate(336deg) brightness(93%) contrast(92%)"
+      },
+      link: "/projects/chrome-extension"
+    },
+    {
       title: "LinkedIn AI Analyzer",
-      description: "Smart post analysis tool",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80",
+      description: "Perplexity Powered LinkedIn Post Analysis Tool",
+      image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1740605007/icon128_mtkiaq.png",
       link: "/projects/linkedin-analyzer"
     }
   ];

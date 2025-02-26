@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import ws from "ws";
+import { neonConfig } from '@neondatabase/serverless';
 
 neonConfig.webSocketConstructor = ws;
 

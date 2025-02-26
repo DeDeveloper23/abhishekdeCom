@@ -22,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-xl sm:text-2xl text-gray-700 mb-8"
         >
-          I build beautiful, interactive experiences for the web
+          I build beautiful, interactive AI-powered web applications
         </motion.p>
 
         <motion.div

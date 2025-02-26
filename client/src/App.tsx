@@ -8,7 +8,7 @@ import Projects from "@/pages/Projects";
 import AscendHiring from "@/pages/AscendHiring";
 import CagrClub from "@/pages/CagrClub";
 import LinkedInAnalyzer from "@/pages/LinkedInAnalyzer";
-import ChromeExtension from "@/pages/ChromeExtension";
+import SquashNoteTaker from "@/pages/ChromeExtension";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -21,7 +21,7 @@ function Router() {
         <Route path="/projects/ascend-hiring" component={AscendHiring} />
         <Route path="/projects/cagr-club" component={CagrClub} />
         <Route path="/projects/linkedin-analyzer" component={LinkedInAnalyzer} />
-        <Route path="/projects/chrome-extension" component={ChromeExtension} />
+        <Route path="/projects/chrome-extension" component={SquashNoteTaker} />
         <Route component={NotFound} />
       </Switch>
     </>
