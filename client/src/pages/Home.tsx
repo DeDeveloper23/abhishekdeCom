@@ -26,7 +26,7 @@ export default function Home() {
         margin: "0 auto",
         filter: "brightness(0) saturate(100%) invert(65%) sepia(49%) saturate(410%) hue-rotate(336deg) brightness(93%) contrast(92%)"
       },
-      link: "/projects/chrome-extension"
+      link: "/projects/squash-notetaker"
     },
     {
       title: "LinkedIn AI Analyzer",
