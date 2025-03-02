@@ -240,25 +240,46 @@ export default function NotFound() {
             onTouchEnd={handleTouchEnd}
           >
             {gameStarted ? (
-              maze.map((row, rowIndex) => 
-                row.map((cell, colIndex) => (
+              <>
+                {maze.map((row, rowIndex) => 
+                  row.map((cell, colIndex) => (
+                    <motion.div
+                      key={`${rowIndex}-${colIndex}`}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ 
+                        duration: 0.2, 
+                        delay: (rowIndex + colIndex) * 0.01 // Faster animation for mobile
+                      }}
+                      className={`
+                        ${cell === WALL ? 'bg-[#8B7E74] border-[#A69F98]' : 'bg-transparent'}
+                        ${cell === PLAYER ? 'bg-[#E2A378] rounded-full shadow-md' : ''}
+                        ${cell === GOAL ? 'bg-[#5D9C59] shadow-md ring-2 ring-[#5D9C59] ring-opacity-50' : ''}
+                        border border-[#D2C0A0]/40 relative
+                      `}
+                    >
+                      {cell === PLAYER && (
+                        <div className="absolute inset-0 bg-[#E2A378] rounded-full" />
+                      )}
+                      {cell === GOAL && (
+                        <div className="absolute inset-0 bg-[#5D9C59] animate-pulse" />
+                      )}
+                    </motion.div>
+                  ))
+                )}
+                {gameWon && (
                   <motion.div
-                    key={`${rowIndex}-${colIndex}`}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ 
-                      duration: 0.2, 
-                      delay: (rowIndex + colIndex) * 0.01 // Faster animation for mobile
-                    }}
-                    className={`
-                      ${cell === WALL ? 'bg-[#8B7E74] border-[#A69F98]' : 'bg-transparent'}
-                      ${cell === PLAYER ? 'bg-[#E2A378] rounded-full' : ''}
-                      ${cell === GOAL ? 'bg-[#5D9C59] border-green-400 animate-pulse' : ''}
-                      border border-[#D2C0A0]/40
-                    `}
-                  />
-                ))
-              )
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="absolute inset-0 flex items-center justify-center z-10"
+                  >
+                    <div className="bg-white/95 backdrop-blur-sm p-6 rounded-lg shadow-xl border-2 border-[#5D9C59] transform -translate-y-4">
+                      <p className="font-bold text-xl text-gray-900 mb-2">You've escaped the 404 maze!</p>
+                      <p className="text-sm text-gray-800">Maybe getting lost wasn't so bad after all</p>
+                    </div>
+                  </motion.div>
+                )}
+              </>
             ) : (
               <div className="col-span-full row-span-full flex items-center justify-center">
                 <Button 
@@ -307,17 +328,6 @@ export default function NotFound() {
               </p>
               <p className="mt-1">🟠 You | 🟢 Goal | ⬛ Wall</p>
             </div>
-          )}
-
-          {gameWon && (
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              className="mt-3 md:mt-4 p-3 bg-[#5D9C59]/20 rounded-md text-center"
-            >
-              <p className="font-bold text-gray-900">You've escaped the 404 maze!</p>
-              <p className="text-sm mt-1 text-gray-800">Maybe getting lost wasn't so bad after all</p>
-            </motion.div>
           )}
         </CardContent>
       </Card>
