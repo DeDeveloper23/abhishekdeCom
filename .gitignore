@@ -7,4 +7,5 @@ vite.config.ts.*
 .env
 attached_assets/
 .replit
+vercel-deployment-solution.txt
 
