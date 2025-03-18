@@ -47,6 +47,23 @@ const projectsData = [
     technologies: ["React", "Node.js", "AI/ML", "API Integration"]
   },
   {
+    id: "atlas-chugged",
+    title: "Atlas Chugged",
+    shortDescription: "YouTube video location mapping tool",
+    longDescription: "A web application that visualizes locations mentioned in YouTube videos on a real-time map, providing geographical context to video content.",
+    image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1742312924/Screenshot_2025-03-18_at_11.48.27_AM_eirwnm.png",
+    link: "/projects/atlas-chugged",
+    category: "Web App",
+    highlights: [
+      "Real-time Location Mapping",
+      "YouTube Integration",
+      "Interactive Map Experience",
+      "Global Location Coverage"
+    ],
+    color: "#4285F4", // Google Maps blue
+    technologies: ["React", "Google Maps API", "YouTube API", "NLP"]
+  },
+  {
     id: "cagr-club",
     title: "CAGR Club",
     shortDescription: "Elite investment community platform",
