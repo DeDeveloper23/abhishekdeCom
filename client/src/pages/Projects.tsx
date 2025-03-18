@@ -51,7 +51,7 @@ const projectsData = [
     title: "Atlas Chugged",
     shortDescription: "YouTube video location mapping tool",
     longDescription: "A web application that visualizes locations mentioned in YouTube videos on a real-time map, providing geographical context to video content.",
-    image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1742312924/Screenshot_2025-03-18_at_11.48.27_AM_eirwnm.png",
+    image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1742319518/atlas-chugged-square_iscba7.png",
     link: "/projects/atlas-chugged",
     category: "Web App",
     highlights: [
@@ -61,7 +61,7 @@ const projectsData = [
       "Global Location Coverage"
     ],
     color: "#4285F4", // Google Maps blue
-    technologies: ["React", "Google Maps API", "YouTube API", "NLP"]
+    technologies: ["React", "MapBox API", "YouTube API", "NLP"]
   },
   {
     id: "cagr-club",
@@ -334,12 +334,35 @@ const ProjectDetail = ({ project }: { project: typeof projectsData[0] }) => {
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const headerRef = useRef(null);
+  const projectDetailRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   const headerY = useTransform(scrollYProgress, [0, 0.1], [0, -50]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
   
   // Get the active project data
   const activeProjectData = projectsData.find(p => p.id === activeProject);
+  
+  const handleProjectClick = (projectId: string) => {
+    const isOpening = projectId !== activeProject;
+    setActiveProject(projectId === activeProject ? null : projectId);
+    
+    if (isOpening) {
+      // Wait for state to update and detail section to render
+      setTimeout(() => {
+        const headerHeight = 80; // Approximate header height
+        const element = projectDetailRef.current;
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  };
   
   // Responsive cards display counts
   const getVisibleProjects = () => {
@@ -416,7 +439,7 @@ export default function Projects() {
               project={project}
               index={index}
               isActive={project.id === activeProject}
-              onClick={() => setActiveProject(project.id === activeProject ? null : project.id)}
+              onClick={() => handleProjectClick(project.id)}
             />
           ))}
         </motion.div>
@@ -424,7 +447,9 @@ export default function Projects() {
         {/* Project Detail Section with AnimatePresence for smooth transitions */}
         <AnimatePresence mode="wait">
           {activeProject && activeProjectData && (
-            <ProjectDetail project={activeProjectData} />
+            <div ref={projectDetailRef}>
+              <ProjectDetail project={activeProjectData} />
+            </div>
           )}
         </AnimatePresence>
       </div>
