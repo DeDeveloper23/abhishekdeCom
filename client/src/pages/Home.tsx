@@ -12,6 +12,12 @@ export default function Home() {
       link: "/projects/ascend-hiring"
     },
     {
+      title: "Atlas Chugged",
+      description: "Visualize YouTube videos on a real-time map to understand geographical context",
+      image: "https://res.cloudinary.com/dj1cbu9zy/image/upload/v1742312924/Screenshot_2025-03-18_at_11.48.27_AM_eirwnm.png",
+      link: "/projects/atlas-chugged"
+    },
+    {
       title: "CAGR Club",
       description: "Elite investment community platform",
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80",

@@ -10,6 +10,7 @@ import CagrClub from "@/pages/CagrClub";
 import LinkedInAnalyzer from "@/pages/LinkedInAnalyzer";
 import LinkedInAiInsightPrivacy from "@/pages/LinkedInAiInsightPrivacy";
 import SquashNoteTaker from "@/pages/SquashNoteTaker";
+import AtlasChugged from "@/pages/AtlasChugged";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
         <Route path="/projects/linkedin-analyzer" component={LinkedInAnalyzer} />
         <Route path="/projects/linkedin-ai-insight/privacy" component={LinkedInAiInsightPrivacy} />
         <Route path="/projects/squash-notetaker" component={SquashNoteTaker} />
+        <Route path="/projects/atlas-chugged" component={AtlasChugged} />
         <Route component={NotFound} />
       </Switch>
     </>
